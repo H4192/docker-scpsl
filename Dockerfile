@@ -18,6 +18,7 @@ USER container
 ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
+RUN ls -la
 RUN mkdir server && mkdir steamcmd 
 
 RUN wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
