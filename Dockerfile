@@ -23,18 +23,19 @@ RUN apt-get -y install ca-certificates ca-certificates-mono
 
 
 RUN useradd -d /home/container container
-RUN mkdir -p /home/container && mkdir -p $STEAMCMDDIR
 
- 
-RUN cd $STEAMCMDDIR && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
-
-RUN chown -R container:container /home/container
 
 
 USER container
 ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
+
+RUN mkdir -p /home/container && mkdir -p steamcmd
+
+RUN cd steamcmd && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
+
+RUN chown -R container:container /home/container
 
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]
