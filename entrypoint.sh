@@ -1,4 +1,4 @@
-apt -y update
+apt-get -y update
 
 mkdir -p /home/container/server/
 
