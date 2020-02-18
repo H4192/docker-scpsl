@@ -9,3 +9,4 @@ cd ..
 
 cd /home/container/server
 chmod +x ./LocalAdmin
+$STARTUP
