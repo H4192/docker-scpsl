@@ -13,15 +13,21 @@ RUN apt-get -y install lib32gcc1
 RUN cert-sync /etc/ssl/certs/ca-certificates.crt
 
 RUN useradd -d /home/container container
-    
+
+
+WORKDIR /home/container
+RUN mkdir ./server && mkdir ./steamcmd
+RUN chown -R container:container ./server 
+
+WORKDIR /home/container/steamcmd
+RUN wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
+RUN chown -R container:container /home/container/steamcmd
+
 USER container
 ENV  USER=container HOME=/home/container
 
-WORKDIR /home/container
-RUN echo $PWD
-RUN su -u container -c " mkdir ./server && mkdir ./steamcmd "
 
-RUN wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
+WORKDIR /home/container
 
 COPY ./entrypoint.sh /entrypoint.sh
 
