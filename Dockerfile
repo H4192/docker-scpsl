@@ -6,8 +6,7 @@ ENV STEAMCMDDIR /home/container/steamcmd
 
 RUN dpkg --add-architecture i386
     
-RUN apt-get -y update && \
-    apt-get -y install apt-utils
+RUN apt-get -y update
     
 RUN apt-get -y install mailutils postfix curl wget file tar bzip2 && \
     apt-get -y install gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux  && \
