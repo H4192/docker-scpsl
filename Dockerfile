@@ -11,7 +11,9 @@ RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/ed
     cert-sync /etc/ssl/certs/ca-certificates.crt && \
     apk del .build-dependencies && \
     adduser -D -h /home/container container && \
-    wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
+    mkdir -p $STEAMCMDDIR && \
+    cd $STEAMCMDDIR && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
+
     
 USER container
 ENV  USER=container HOME=/home/container
