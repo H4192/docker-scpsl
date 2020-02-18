@@ -11,7 +11,7 @@ RUN apt-get update && \
     useradd -d /home/container container && \
     mkdir -p /home/container/steamcmd && \
     cd $STEAMCMDDIR && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - && \
-    chown -R container:container /home/container %% \
+    chown -R container:container /home/container && \
     chmod +x /home/container/steamcmd/steamcmd.sh
     
 USER container
