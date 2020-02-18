@@ -23,7 +23,8 @@ RUN apt-get -y install ca-certificates ca-certificates-mono
 
 
 RUN useradd -d /home/container container
-
+RUN mkdir /home/container
+RUN chown -R container:container /home/container
 
 
 USER container
