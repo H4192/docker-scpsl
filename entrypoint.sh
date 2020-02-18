@@ -1,4 +1,4 @@
-apt -y uodate
+apt -y update
 
 mkdir -p /home/container/server/
 
