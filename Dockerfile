@@ -6,7 +6,7 @@ ENV STEAMCMDDIR /home/container/steamcmd
 
 RUN apt-get update
 
-RUN apt-get -y install  ca-certificates curl openssl git tar bash sqlite fontconfig wget && \
+RUN apt-get -y install  ca-certificates curl openssl git tar bash sqlite fontconfig wget 
     
 RUN apt-get -y install lib32gcc1
 
