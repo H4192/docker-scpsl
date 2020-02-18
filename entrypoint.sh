@@ -1,5 +1,5 @@
 apt-get -y update
-
+echo "GITHUB version"
 mkdir -p ./server ./steamcmd
 
 cd steamcmd
@@ -8,3 +8,5 @@ cd ..
 /home/container/steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container/server +app_update 996560 -validate +exit 
 
 cd /home/container/server
+chmod +x ./LocalAdmin
+./LocalAdmin 27016
