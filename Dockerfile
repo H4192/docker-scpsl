@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get -y install lib32gcc1 && \
     cert-sync /etc/ssl/certs/ca-certificates.crt && \
     adduser -D -h /home/container container && \
-    mkdir -p $STEAMCMDDIR
+    mkdir -p $STEAMCMDDIR && \
     cd $STEAMCMDDIR && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
     
 USER container
