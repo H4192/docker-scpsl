@@ -23,7 +23,7 @@ RUN apt-get -y install ca-certificates ca-certificates-mono
 
 
 RUN useradd -d /home/container container
-RUN mkdir -p /home/container && RUN mkdir -p $STEAMCMDDIR
+RUN mkdir -p /home/container && mkdir -p $STEAMCMDDIR
 
  
 RUN cd $STEAMCMDDIR && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
