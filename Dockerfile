@@ -13,6 +13,7 @@ RUN apt-get -y install lib32gcc1
 RUN cert-sync /etc/ssl/certs/ca-certificates.crt
 
 RUN useradd -d /home/container container
+RUN chmod -R container:container /home/container
 
 USER container
 ENV  USER=container HOME=/home/container
