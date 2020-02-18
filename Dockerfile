@@ -12,6 +12,7 @@ RUN apt-get -y install lib32gcc1
 
 RUN cert-sync /etc/ssl/certs/ca-certificates.crt
 
+RUN mkdir -p /home/container
 RUN useradd -d /home/container container
 RUN chown -R container:container /home/container
 
