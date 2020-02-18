@@ -1,5 +1,5 @@
 apt-get -y update
-
+echo "GITHUB version"
 mkdir -p ./server ./steamcmd
 
 cd steamcmd
