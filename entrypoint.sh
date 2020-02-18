@@ -9,4 +9,4 @@ cd ..
 
 cd /home/container/server
 chmod +x ./LocalAdmin
-$STARTUP
+./LocalAdmin 27016
