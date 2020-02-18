@@ -16,8 +16,10 @@ RUN apt-get -y install mailutils postfix curl wget file tar bzip2 && \
 RUN apt-get -y install git tar bash sqlite fontconfig
 
 RUN apt-get -y install ca-certificates
+
+RUN mkdir -p $STEAMCMDDIR
     
-RUN adduser -D -h /home/container container && \
+RUN useradd -d /home/container container && \
     cd $STEAMCMDDIR && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
 
 
