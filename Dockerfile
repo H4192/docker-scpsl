@@ -31,9 +31,9 @@ ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
 
-RUN mkdir -p /home/container && mkdir -p steamcmd
+RUN mkdir -p ./steamcmd
 
-RUN cd steamcmd && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
+RUN cd ./steamcmd && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
 
 RUN chown -R container:container /home/container
 
