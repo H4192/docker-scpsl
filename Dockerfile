@@ -4,7 +4,8 @@ MAINTAINER Worreh, worreh@gmail.com
 
 ENV STEAMCMDDIR /home/container/steamcmd
 
-RUN apt-get install  ca-certificates curl openssl git tar bash sqlite fontconfig && \
+RUN apt-get update && \
+    apt-get install  ca-certificates curl openssl git tar bash sqlite fontconfig && \
     apt-get install lib32gcc1 && \
     cert-sync /etc/ssl/certs/ca-certificates.crt && \
     adduser -D -h /home/container container && \
