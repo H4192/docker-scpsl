@@ -18,8 +18,7 @@ RUN apt-get -y install ca-certificates
 
 RUN mkdir -p $STEAMCMDDIR
     
-RUN useradd -d /home/container container && \
-    cd $STEAMCMDDIR && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
+RUN cd $STEAMCMDDIR && wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - 
 
 
 RUN mkdir -p /home/container
